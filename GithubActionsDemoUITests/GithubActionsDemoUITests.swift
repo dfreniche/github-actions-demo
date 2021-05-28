@@ -29,6 +29,12 @@ class GithubActionsDemoUITests: XCTestCase {
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let startButton = app.buttons["Touch me!"]
+        
+        // should be on screen, and enabled
+        XCTAssertTrue(startButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(startButton.isEnabled)
     }
 
     func testLaunchPerformance() throws {
