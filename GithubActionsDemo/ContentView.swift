@@ -9,13 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @State var numTouches = 0
+    var color: Color
+    var text: String
 
     var body: some View {
         VStack {
-            Text("Hello, world!")
+            Text(text)
                 .padding()
+                .foregroundColor(color)
             Text("Second text")
                 .padding()
+                .foregroundColor(color)
             Button("Touch me!", action: {
                 numTouches = numTouches + 1
                 print("Touch! \( numTouches)")
@@ -26,6 +30,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(color: .red, text: "Hello World!")
     }
 }
